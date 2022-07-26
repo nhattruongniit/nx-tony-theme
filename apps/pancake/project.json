@@ -1,0 +1,70 @@
+{
+  "root": "apps/pancake",
+  "sourceRoot": "apps/pancake/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/pancake",
+        "index": "apps/pancake/src/index.html",
+        "baseHref": "/",
+        "main": "apps/pancake/src/main.tsx",
+        "polyfills": "apps/pancake/src/polyfills.ts",
+        "tsConfig": "apps/pancake/tsconfig.app.json",
+        "assets": ["apps/pancake/src/favicon.ico", "apps/pancake/src/assets"],
+        "styles": ["apps/pancake/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/pancake/src/environments/environment.ts",
+              "with": "apps/pancake/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "pancake:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "pancake:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/pancake/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/pancake"],
+      "options": {
+        "jestConfig": "apps/pancake/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
