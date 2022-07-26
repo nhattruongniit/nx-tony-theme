@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "pancake": "apps/pancake",
-    "pancake-e2e": "apps/pancake-e2e"
+    "pancake-e2e": "apps/pancake-e2e",
+    "themes-minimal": "libs/themes/minimal"
   }
 }
