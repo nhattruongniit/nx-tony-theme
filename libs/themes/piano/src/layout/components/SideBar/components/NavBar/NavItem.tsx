@@ -1,15 +1,23 @@
-import React from "react";
+/* eslint-disable react/jsx-no-useless-fragment */
+import React from 'react';
 // @mui
-import { Box, Tooltip, ListItemButtonProps } from "@mui/material";
+import { Box, Tooltip, ListItemButtonProps } from '@mui/material';
 // mui icon
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-import { NavItemProps } from "../../type";
-import { ListItemStyle, ListItemTextStyle, ListItemIconStyle } from "./style";
+import { NavItemProps } from '../../type';
+import { ListItemStyle, ListItemTextStyle, ListItemIconStyle } from './style';
 
 type Props = NavItemProps & ListItemButtonProps;
 
-export default function NavItem({ item, depth, active, open, isCollapse, ...other }: Props) {
+export default function NavItem({
+  item,
+  depth,
+  active,
+  open,
+  isCollapse,
+  ...other
+}: Props) {
   const { label, icon, info, children, disabled, caption } = item;
 
   const renderContent = (
@@ -30,11 +38,11 @@ export default function NavItem({ item, depth, active, open, isCollapse, ...othe
         }
         primaryTypographyProps={{
           noWrap: true,
-          variant: active ? "subtitle2" : "body2",
+          variant: active ? 'subtitle2' : 'body2',
         }}
         secondaryTypographyProps={{
           noWrap: true,
-          variant: "caption",
+          variant: 'caption',
         }}
       />
 
@@ -46,8 +54,10 @@ export default function NavItem({ item, depth, active, open, isCollapse, ...othe
             </Box>
           )}
 
-          {children.length > 0 && (
-            <KeyboardArrowDownIcon sx={{ transform: open ? "rotate(0deg)" : "rotate(270deg)" }} />
+          {children && children.length > 0 && (
+            <KeyboardArrowDownIcon
+              sx={{ transform: open ? 'rotate(0deg)' : 'rotate(270deg)' }}
+            />
           )}
         </>
       )}
@@ -71,15 +81,15 @@ export function DotIcon({ active }: DotIconProps) {
         sx={{
           width: 4,
           height: 4,
-          borderRadius: "50%",
-          bgcolor: "text.disabled",
+          borderRadius: '50%',
+          bgcolor: 'text.disabled',
           transition: (theme) =>
-            theme.transitions.create("transform", {
+            theme.transitions.create('transform', {
               duration: theme.transitions.duration.shorter,
             }),
           ...(active && {
-            transform: "scale(2)",
-            bgcolor: "primary.main",
+            transform: 'scale(2)',
+            bgcolor: 'primary.main',
           }),
         }}
       />

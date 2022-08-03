@@ -16,7 +16,7 @@ This project was generated using [Nx](https://nx.dev).
 $ npx nx generate @nrwl/react:library minimal --directory=themes --importPath=@tony-mui/minimal --publishable
 ```
 
-2. Go to libs/themes/minimal/package.json
+2. Go to libs/themes/piano/package.json
 
 ```
 {
@@ -31,7 +31,7 @@ $ npx nx generate @nrwl/react:library minimal --directory=themes --importPath=@t
 3. Build themes
 
 ```
-$ npm run build themes-minimal
+$ npm run build themes-piano
 ```
 
 4. Go to tsconfig.base.json

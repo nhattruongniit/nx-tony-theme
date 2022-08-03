@@ -45,7 +45,7 @@ export interface ISideBarProps {
   isCollapse: boolean;
   collapseClick: boolean;
   collapseHover: boolean;
-  menuItems?: unknown[];
+  menuItems?: any[];
   onCloseSidebar: () => void;
   onToggleCollapse: () => void;
   onHoverEnter: () => void;

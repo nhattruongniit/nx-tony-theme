@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { useNavigate, useLocation, matchPath } from "react-router-dom";
+import { useState } from 'react';
+import { useNavigate, useLocation, matchPath } from 'react-router-dom';
 // @mui
-import { List, Collapse, Link } from "@mui/material";
+import { List, Collapse, Link } from '@mui/material';
 //
-import { NavListProps } from "../../type";
-import NavItem from "./NavItem";
+import { NavListProps } from '../../type';
+import NavItem from './NavItem';
 
 function getActive(path: string, pathname: string) {
   return path ? !!matchPath({ path: path, end: false }, pathname) : false;
 }
 
 function isExternalLink(path: string) {
-  return path.includes("http");
+  return path.includes('http');
 }
 
 type NavListRootProps = {
@@ -21,7 +21,12 @@ type NavListRootProps = {
   isCollapse?: boolean;
 };
 
-export default function NavList({ data, depth, hasChildren, isCollapse = false }: NavListRootProps) {
+export default function NavList({
+  data,
+  depth,
+  hasChildren,
+  isCollapse = false,
+}: NavListRootProps) {
   const navigate = useNavigate();
 
   const { pathname } = useLocation();
@@ -41,7 +46,13 @@ export default function NavList({ data, depth, hasChildren, isCollapse = false }
     <>
       {isExternalLink(data.route) ? (
         <Link href={data.route} target="_blank" rel="noopener" underline="none">
-          <NavItem item={data} depth={depth} open={open} active={active} isCollapse={isCollapse} />
+          <NavItem
+            item={data}
+            depth={depth}
+            open={open}
+            active={active}
+            isCollapse={isCollapse}
+          />
         </Link>
       ) : (
         <NavItem
@@ -74,7 +85,12 @@ function NavSubList({ data, depth }: NavListSubProps) {
   return (
     <>
       {data.map((list) => (
-        <NavList key={list.label + list.route} data={list} depth={depth + 1} hasChildren={list.children.length > 0} />
+        <NavList
+          key={list.label + list.route}
+          data={list}
+          depth={depth + 1}
+          hasChildren={list.children.length > 0}
+        />
       ))}
     </>
   );
