@@ -10,26 +10,25 @@ import {
   Popover,
 } from '@mui/material';
 
-export type IMenuOptionProps = {
+export type IMenuAccountPopoverProps = {
   label: string;
-  linkTo: string;
   action: () => void;
 };
 
 export type IAccountPopoverProps = {
-  logout?: () => void;
+  onLogout?: () => void;
   user?: {
     avatar?: string;
     name?: string;
     email?: string;
   };
-  menuOption?: IMenuOptionProps[];
+  menuAccountPopover?: IMenuAccountPopoverProps[];
 };
 
 export function AccountPopover({
   user,
-  menuOption,
-  logout,
+  menuAccountPopover,
+  onLogout,
 }: IAccountPopoverProps) {
   const [open, setOpen] = useState<null | HTMLElement>(null);
 
@@ -90,12 +89,12 @@ export function AccountPopover({
           </Typography>
         </Box>
 
-        {menuOption && (
+        {menuAccountPopover && (
           <>
             <Divider sx={{ borderStyle: 'dashed' }} />
 
             <Stack sx={{ p: 1 }}>
-              {menuOption.map((option) => (
+              {menuAccountPopover.map((option) => (
                 <MenuItem
                   key={option.label}
                   onClick={() => {
@@ -110,10 +109,10 @@ export function AccountPopover({
           </>
         )}
 
-        {logout && (
+        {onLogout && (
           <>
             <Divider sx={{ borderStyle: 'dashed' }} />
-            <MenuItem sx={{ m: 1 }} onClick={() => logout()}>
+            <MenuItem sx={{ m: 1 }} onClick={() => onLogout()}>
               Logout
             </MenuItem>
           </>

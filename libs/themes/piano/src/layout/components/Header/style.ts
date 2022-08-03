@@ -1,7 +1,7 @@
 import { styled, AppBar } from '@mui/material';
 
-// utils
-import { cssStyles } from '../../../helpers';
+// css styles
+import { cssStyles } from '@tony-theme/core/components';
 
 // config
 import {

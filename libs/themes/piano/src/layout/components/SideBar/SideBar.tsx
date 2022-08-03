@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-// import { useMenu } from '@pankod/refine-core';
 import {
   styled,
   useTheme,
@@ -12,13 +12,13 @@ import {
 import { List } from '@mui/material';
 
 // assets
-// import LogoImg from 'assets/images/favicon.png';
+import { LogoImg } from '@tony-theme/core';
 
 // hooks
-import { useResponsive } from '@nx-tony-theme/hooks';
+import { useResponsive } from '@tony-theme/hooks';
 
-// utils
-import { cssStyles } from '../../../helpers';
+// cssStyles
+import { cssStyles } from '@tony-theme/core/components';
 
 // config
 import { NAVBAR } from '@tony-theme/core/config';
@@ -40,11 +40,12 @@ const RootStyle = styled('div')(({ theme }) => ({
   },
 }));
 
-interface IProps {
+export interface ISideBarProps {
   isOpenSidebar: boolean;
   isCollapse: boolean;
   collapseClick: boolean;
   collapseHover: boolean;
+  menuItems?: unknown[];
   onCloseSidebar: () => void;
   onToggleCollapse: () => void;
   onHoverEnter: () => void;
@@ -52,17 +53,19 @@ interface IProps {
 }
 
 export function SideBar({
+  // state
   isOpenSidebar,
   isCollapse,
   collapseClick,
   collapseHover,
+  menuItems,
+  // actions
   onToggleCollapse,
   onCloseSidebar,
   onHoverEnter,
   onHoverLeave,
-}: IProps) {
+}: ISideBarProps) {
   const theme = useTheme();
-  // const { menuItems } = useMenu();
   const { pathname } = useLocation();
   const isDesktop = useResponsive('up', 'lg');
 
@@ -100,8 +103,7 @@ export function SideBar({
           justifyContent="space-between"
           sx={{ width: '100%' }}
         >
-          {/* <img src={LogoImg} alt="Amanotes" width={32} /> */}
-          logo
+          <img src={LogoImg} alt="Amanotes" width={32} />
           {isDesktop && !isCollapse && (
             <IconButton
               color="primary"
@@ -144,17 +146,20 @@ export function SideBar({
       </Stack>
 
       <Box>
-        {/* {menuItems.map((list: any, groupIndex: number) => (
-          <List key={groupIndex} sx={{ px: 2, pb: 0, pt: 0 }}>
-            <NavList
-              data={list}
-              depth={1}
-              hasChildren={list.children.length > 0}
-              isCollapse={isCollapse}
-            />
-          </List>
-        ))} */}
-        menuItem
+        {menuItems && (
+          <>
+            {menuItems.map((list: any, groupIndex: number) => (
+              <List key={groupIndex} sx={{ px: 2, pb: 0, pt: 0 }}>
+                <NavList
+                  data={list}
+                  depth={1}
+                  hasChildren={list.children.length > 0}
+                  isCollapse={isCollapse}
+                />
+              </List>
+            ))}
+          </>
+        )}
       </Box>
       <Box sx={{ flexGrow: 1 }} />
     </Scrollbar>

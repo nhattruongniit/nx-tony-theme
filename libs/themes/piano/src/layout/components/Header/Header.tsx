@@ -7,26 +7,26 @@ import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { THEMES } from '@tony-theme/core/config';
 
 // hooks
-import { useResponsive } from '@nx-tony-theme/hooks';
+import { useResponsive } from '@tony-theme/hooks';
 
 // components
 import {
   ThemeMode,
   SearchBar,
   ISearchBarProps,
+  IThemeModeProps,
 } from '@tony-theme/core/components';
 
 // styles
 import { RootStyle } from './style';
 import React from 'react';
 
-interface IHeaderProps extends ISearchBarProps {
-  onOpenSidebar: VoidFunction;
-  onToggleMode?: VoidFunction;
-  themeMode?: string;
-  isCollapse?: boolean;
-  AccountPopover?: React.ReactNode | undefined;
-}
+export type IHeaderProps = ISearchBarProps &
+  IThemeModeProps & {
+    onOpenSidebar: VoidFunction;
+    isCollapse?: boolean;
+    AccountPopover?: React.ReactNode | undefined;
+  };
 
 export function Header({
   // state

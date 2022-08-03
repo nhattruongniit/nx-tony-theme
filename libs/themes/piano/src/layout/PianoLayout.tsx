@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, styled } from '@mui/material';
 
 // hooks
-import { useResponsive } from '@nx-tony-theme/hooks';
+import { useResponsive } from '@tony-theme/hooks';
 
 // sections
 import { SideBar as DefaultSider } from './components/SideBar';
@@ -12,7 +12,12 @@ import { Header as DefaultHeader } from './components/Header';
 import { HEADER, NAVBAR } from '@tony-theme/core/config';
 
 // components
-import { AccountPopover, ISearchBarProps } from '@tony-theme/core/components';
+import {
+  AccountPopover,
+  ISearchBarProps,
+  IAccountPopoverProps,
+  IThemeModeProps,
+} from '@tony-theme/core/components';
 
 type MainStyleProps = {
   collapseClick: boolean;
@@ -39,17 +44,26 @@ const MainStyle = styled('main', {
   },
 }));
 
-interface IProps extends ISearchBarProps {
-  children: React.ReactNode;
-  onToggleMode?: VoidFunction;
-  CustomAccountPopover?: React.FC;
-}
+type IProps = ISearchBarProps &
+  IAccountPopoverProps &
+  IThemeModeProps & {
+    children: React.ReactNode;
+    CustomAccountPopover?: React.FC;
+    menuItems?: unknown[];
+  };
 
 export const PianoLayout: React.FC<IProps> = ({
-  children,
+  // state
+  themeMode,
+  menuAccountPopover,
+  menuItems,
+  // actions
   onToggleMode,
   onSearchBar,
+  onLogout,
+  // components
   CustomAccountPopover,
+  children,
 }) => {
   const [open, setOpen] = React.useState(false);
   const [collapse, setCollapse] = React.useState({
@@ -92,11 +106,19 @@ export const PianoLayout: React.FC<IProps> = ({
     >
       <DefaultHeader
         isCollapse={isCollapse}
+        themeMode={themeMode}
         onOpenSidebar={() => setOpen(true)}
         onToggleMode={onToggleMode}
         onSearchBar={onSearchBar}
         AccountPopover={
-          CustomAccountPopover ? <CustomAccountPopover /> : <AccountPopover />
+          CustomAccountPopover ? (
+            <CustomAccountPopover />
+          ) : (
+            <AccountPopover
+              menuAccountPopover={menuAccountPopover}
+              onLogout={onLogout}
+            />
+          )
         }
       />
 
@@ -104,6 +126,7 @@ export const PianoLayout: React.FC<IProps> = ({
         isCollapse={isCollapse}
         isOpenSidebar={open}
         onToggleCollapse={onToggleCollapse}
+        menuItems={menuItems}
         collapseClick={collapse.click}
         collapseHover={collapse.hover}
         onCloseSidebar={() => setOpen(false)}

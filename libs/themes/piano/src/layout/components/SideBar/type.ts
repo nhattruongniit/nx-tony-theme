@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { BoxProps } from "@mui/material";
+import { ReactElement } from 'react';
+import { BoxProps } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ export type NavListProps = {
   caption?: string;
   disabled?: boolean;
   roles?: string[];
-  children?: any;
+  children?: unknown;
 };
 
 export type NavItemProps = {

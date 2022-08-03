@@ -2,20 +2,33 @@ import Typography from '@mui/material/Typography';
 
 import { PianoLayout } from '@tony-theme/piano';
 
-const Abc: React.FC = () => {
-  return <div>adbc</div>;
-};
-
 export default function App() {
   return (
     <PianoLayout
+      themeMode="light"
       onToggleMode={() => {
         console.log('onToggleMode');
       }}
       onSearchBar={(text) => {
         console.log('onSearchBar: ', text);
       }}
-      // CustomAccountPopover={Abc}
+      onLogout={() => {
+        console.log('onLogout');
+      }}
+      menuAccountPopover={[
+        {
+          label: 'Profile',
+          action: () => {
+            console.log('profile');
+          },
+        },
+        {
+          label: 'Settings',
+          action: () => {
+            console.log('settings');
+          },
+        },
+      ]}
     >
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
