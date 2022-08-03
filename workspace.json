@@ -4,6 +4,9 @@
     "hooks": "libs/hooks",
     "pancake": "apps/pancake",
     "pancake-e2e": "apps/pancake-e2e",
-    "themes-guitar": "libs/themes/guitar"
+    "themes-core": "libs/themes/core",
+    "themes-core-components": "libs/themes/core/components",
+    "themes-core-config": "libs/themes/core/config",
+    "themes-piano": "libs/themes/piano"
   }
 }

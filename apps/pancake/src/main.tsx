@@ -4,7 +4,7 @@ import * as ReactDOMClient from 'react-dom/client';
 import { ThemeProvider, createTheme, ThemeOptions } from '@mui/material/styles';
 
 // themes
-import { palette } from 'libs/themes/guitar/src/styles';
+import { palette } from '@tony-theme/piano';
 
 import App from './app/app';
 

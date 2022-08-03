@@ -1,0 +1,43 @@
+{
+  "root": "libs/themes/piano",
+  "sourceRoot": "libs/themes/piano/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/themes/piano",
+        "tsConfig": "libs/themes/piano/tsconfig.lib.json",
+        "project": "libs/themes/piano/package.json",
+        "entryFile": "libs/themes/piano/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/themes/piano/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/themes/piano/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/themes/piano"],
+      "options": {
+        "jestConfig": "libs/themes/piano/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
