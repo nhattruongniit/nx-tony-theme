@@ -19,6 +19,8 @@ import {
   IThemeModeProps,
 } from '@tony-theme/core/components';
 
+import { NavListProps } from './components/SideBar/type';
+
 type MainStyleProps = {
   collapseClick: boolean;
 };
@@ -49,7 +51,7 @@ type IProps = ISearchBarProps &
   IThemeModeProps & {
     children: React.ReactNode;
     CustomAccountPopover?: React.FC;
-    menuItems?: unknown[];
+    menuItems?: NavListProps[];
   };
 
 export const PianoLayout: React.FC<IProps> = ({

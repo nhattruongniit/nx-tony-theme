@@ -29,6 +29,9 @@ import NavList from './components/NavBar/NavList';
 // components
 import { Scrollbar } from './components/Scrollbar';
 
+// types
+import { NavListProps } from './type';
+
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
@@ -45,7 +48,7 @@ export interface ISideBarProps {
   isCollapse: boolean;
   collapseClick: boolean;
   collapseHover: boolean;
-  menuItems?: any[];
+  menuItems?: NavListProps[];
   onCloseSidebar: () => void;
   onToggleCollapse: () => void;
   onHoverEnter: () => void;
