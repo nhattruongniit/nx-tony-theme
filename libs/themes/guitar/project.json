@@ -1,0 +1,23 @@
+{
+  "root": "libs/themes/guitar",
+  "sourceRoot": "libs/themes/guitar/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/themes/guitar/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/themes/guitar"],
+      "options": {
+        "jestConfig": "libs/themes/guitar/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

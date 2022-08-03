@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-tony-theme/hooks": ["libs/hooks/src/index.ts"],
+      "@nx-tony-theme/themes/guitar": ["libs/themes/guitar/src/index.ts"],
       "@tony-theme/minimal": ["libs/themes/minimal/src/index.ts"]
     }
   },
