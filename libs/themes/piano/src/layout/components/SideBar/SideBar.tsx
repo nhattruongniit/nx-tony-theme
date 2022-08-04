@@ -11,9 +11,6 @@ import {
 } from '@mui/material';
 import { List } from '@mui/material';
 
-// assets
-import { LogoImg } from '@tony-theme/core/configs';
-
 // hooks
 import { useResponsive } from '@tony-theme/hooks';
 
@@ -49,6 +46,7 @@ export interface ISideBarProps {
   collapseClick: boolean;
   collapseHover: boolean;
   menuItems?: NavListProps[];
+  logo?: any | React.ReactNode;
   onCloseSidebar: () => void;
   onToggleCollapse: () => void;
   onHoverEnter: () => void;
@@ -62,6 +60,7 @@ export function SideBar({
   collapseClick,
   collapseHover,
   menuItems,
+  logo,
   // actions
   onToggleCollapse,
   onCloseSidebar,
@@ -106,7 +105,7 @@ export function SideBar({
           justifyContent="space-between"
           sx={{ width: '100%' }}
         >
-          <img src={LogoImg} alt="Amanotes" width={32} />
+          {logo && <img src={logo} alt="Amanotes" width={32} />}
           {isDesktop && !isCollapse && (
             <IconButton
               color="primary"
