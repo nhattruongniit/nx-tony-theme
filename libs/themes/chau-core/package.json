@@ -1,4 +1,19 @@
 {
   "name": "@tony-theme/chau-core",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.esm.js",
+      "require": "./index.umd.js"
+    },
+    "./components": {
+      "types": "./components/index.d.ts",
+      "import": "./components/index.esm.js",
+      "require": "./components/index.umd.js"
+    }
+  }
 }
