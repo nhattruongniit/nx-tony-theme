@@ -1,0 +1,45 @@
+{
+  "root": "libs/themes/chau-core/components",
+  "sourceRoot": "libs/themes/chau-core/components/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/themes/chau-core/components",
+        "tsConfig": "libs/themes/chau-core/components/tsconfig.lib.json",
+        "project": "libs/themes/chau-core/components/package.json",
+        "entryFile": "libs/themes/chau-core/components/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/themes/chau-core/components/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/themes/chau-core/components/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/themes/chau-core/components"],
+      "options": {
+        "jestConfig": "libs/themes/chau-core/components/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

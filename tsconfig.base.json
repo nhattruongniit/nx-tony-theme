@@ -15,6 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@tony-theme/chau-core": ["libs/themes/chau-core/src/index.ts"],
+      "@tony-theme/chau-core/components": [
+        "libs/themes/chau-core/components/src/index.ts"
+      ],
       "@tony-theme/components": ["libs/themes/cores/components/src/index.ts"],
       "@tony-theme/configs": ["libs/themes/cores/configs/src/index.ts"],
       "@tony-theme/hooks": ["libs/hooks/src/index.ts"],
