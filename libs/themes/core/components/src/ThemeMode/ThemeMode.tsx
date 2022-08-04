@@ -5,14 +5,18 @@ import Brightness4 from '@mui/icons-material/Brightness4';
 import Brightness7 from '@mui/icons-material/Brightness7';
 
 // configs
-import { THEMES } from '@tony-theme/core/configs';
+import { THEMES } from '../configs';
+import React from 'react';
 
 export interface IThemeModeProps {
   onToggleMode?: VoidFunction;
   themeMode?: string;
 }
 
-export function ThemeMode({ onToggleMode, themeMode }: IThemeModeProps) {
+export const ThemeMode: React.FC<IThemeModeProps> = ({
+  onToggleMode,
+  themeMode,
+}) => {
   return (
     <IconButton
       aria-label="account of current user"
@@ -26,4 +30,4 @@ export function ThemeMode({ onToggleMode, themeMode }: IThemeModeProps) {
       {themeMode === THEMES.LIGHT ? <Brightness4 /> : <Brightness7 />}
     </IconButton>
   );
-}
+};

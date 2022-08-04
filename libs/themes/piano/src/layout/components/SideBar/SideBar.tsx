@@ -15,11 +15,8 @@ import {
 // hooks
 import { useResponsive } from '@tony-theme/hooks';
 
-// cssStyles
-import { cssStyles } from '@tony-theme/core/components';
-
 // config
-import { NAVBAR } from '@tony-theme/core/configs';
+import { NAVBAR, cssStyles } from '../../../configs';
 
 // sections
 import NavList from './components/NavBar/NavList';
@@ -28,7 +25,7 @@ import NavList from './components/NavBar/NavList';
 import { Scrollbar } from './components/Scrollbar';
 
 // types
-import { NavListProps } from './type';
+import { ISideBarProps } from './type';
 
 // ----------------------------------------------------------------------
 
@@ -40,19 +37,6 @@ const RootStyle = styled('div')(({ theme }) => ({
     }),
   },
 }));
-
-export interface ISideBarProps {
-  isOpenSidebar: boolean;
-  isCollapse: boolean;
-  collapseClick: boolean;
-  collapseHover: boolean;
-  menuItems?: NavListProps[];
-  logo?: any | React.ReactNode;
-  onCloseSidebar: () => void;
-  onToggleCollapse: () => void;
-  onHoverEnter: () => void;
-  onHoverLeave: () => void;
-}
 
 export function SideBar({
   // state

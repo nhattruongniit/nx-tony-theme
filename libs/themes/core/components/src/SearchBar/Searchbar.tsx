@@ -22,7 +22,7 @@ import {
 } from '@tony-theme/core/configs';
 
 // styles
-import { cssStyles } from '../cssStyles';
+import { cssStyles } from '../configs';
 
 export const SearchbarStyle = styled('div')(({ theme }) => ({
   ...cssStyles(theme).bgBlur(),

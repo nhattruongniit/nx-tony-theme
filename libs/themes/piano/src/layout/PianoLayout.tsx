@@ -9,20 +9,18 @@ import { SideBar as DefaultSider } from './components/SideBar';
 import { Header as DefaultHeader } from './components/Header';
 
 // config
-import { HEADER, NAVBAR } from '@tony-theme/core/configs';
+import { HEADER, NAVBAR } from '../configs';
 
 // components
-import {
-  AccountPopover,
-  ISearchBarProps,
-  IAccountPopoverProps,
-  IThemeModeProps,
-} from '@tony-theme/core/components';
-
 import { NavListProps } from './components/SideBar/type';
 
 type MainStyleProps = {
   collapseClick: boolean;
+};
+
+type IMenuAccountPopoverProps = {
+  label: string;
+  action: () => void;
 };
 
 const MainStyle = styled('main', {
@@ -46,25 +44,25 @@ const MainStyle = styled('main', {
   },
 }));
 
-type IProps = ISearchBarProps &
-  IAccountPopoverProps &
-  IThemeModeProps & {
-    children: React.ReactNode;
-    CustomAccountPopover?: React.FC;
-    menuItems?: NavListProps[];
-  };
+type IProps = {
+  children: React.ReactNode;
+  AccountPopover?: React.ReactNode;
+  ThemeMode?: React.ReactNode;
+  SearchBar?: React.ReactNode;
+  menuAccountPopover?: IMenuAccountPopoverProps[];
+  menuItems?: NavListProps[];
+  logo?: any | React.ReactNode;
+  onSearchBar?: (value: string) => void;
+};
 
 export const PianoLayout: React.FC<IProps> = ({
   // state
-  themeMode,
-  menuAccountPopover,
+  logo,
   menuItems,
-  // actions
-  onToggleMode,
-  onSearchBar,
-  onLogout,
   // components
-  CustomAccountPopover,
+  AccountPopover,
+  ThemeMode,
+  SearchBar,
   children,
 }) => {
   const [open, setOpen] = React.useState(false);
@@ -108,32 +106,23 @@ export const PianoLayout: React.FC<IProps> = ({
     >
       <DefaultHeader
         isCollapse={isCollapse}
-        themeMode={themeMode}
         onOpenSidebar={() => setOpen(true)}
-        onToggleMode={onToggleMode}
-        onSearchBar={onSearchBar}
-        AccountPopover={
-          CustomAccountPopover ? (
-            <CustomAccountPopover />
-          ) : (
-            <AccountPopover
-              menuAccountPopover={menuAccountPopover}
-              onLogout={onLogout}
-            />
-          )
-        }
+        AccountPopover={AccountPopover}
+        ThemeMode={ThemeMode}
+        SearchBar={SearchBar}
       />
 
       <DefaultSider
+        logo={logo}
         isCollapse={isCollapse}
         isOpenSidebar={open}
         onToggleCollapse={onToggleCollapse}
-        menuItems={menuItems}
         collapseClick={collapse.click}
         collapseHover={collapse.hover}
         onCloseSidebar={() => setOpen(false)}
         onHoverEnter={onHoverEnter}
         onHoverLeave={onHoverLeave}
+        menuItems={menuItems}
       />
 
       <MainStyle collapseClick={collapse.click}>{children}</MainStyle>

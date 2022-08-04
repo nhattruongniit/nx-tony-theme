@@ -30,3 +30,16 @@ export interface NavSectionProps extends BoxProps {
     items: NavListProps[];
   }[];
 }
+
+export interface ISideBarProps {
+  isOpenSidebar: boolean;
+  isCollapse: boolean;
+  collapseClick: boolean;
+  collapseHover: boolean;
+  menuItems?: NavListProps[];
+  logo?: any | React.ReactNode;
+  onCloseSidebar: () => void;
+  onToggleCollapse: () => void;
+  onHoverEnter: () => void;
+  onHoverLeave: () => void;
+}

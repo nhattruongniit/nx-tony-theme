@@ -1,20 +1,15 @@
 import Typography from '@mui/material/Typography';
 
 import { PianoLayout } from '@tony-theme/piano';
+import {
+  AccountPopover,
+  ThemeMode,
+  SearchBar,
+} from '@tony-theme/core/components';
 
 export default function App() {
   return (
     <PianoLayout
-      themeMode="light"
-      onToggleMode={() => {
-        console.log('onToggleMode');
-      }}
-      onSearchBar={(text) => {
-        console.log('onSearchBar: ', text);
-      }}
-      onLogout={() => {
-        console.log('onLogout');
-      }}
       menuAccountPopover={[
         {
           label: 'Profile',
@@ -29,6 +24,16 @@ export default function App() {
           },
         },
       ]}
+      AccountPopover={<AccountPopover />}
+      ThemeMode={
+        <ThemeMode
+          themeMode="light"
+          onToggleMode={() => {
+            console.log('ontoggle mode');
+          }}
+        />
+      }
+      SearchBar={<SearchBar onSearchBar={(value) => console.log(value)} />}
     >
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

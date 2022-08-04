@@ -1,15 +1,13 @@
 import { styled, AppBar } from '@mui/material';
 
-// css styles
-import { cssStyles } from '@tony-theme/core/components';
-
-// config
+// configs
 import {
   HEADER,
   NAVBAR,
   APPBAR_MOBILE,
   APPBAR_DESKTOP,
-} from '@tony-theme/core/configs';
+  cssStyles,
+} from '../../../configs';
 
 type RootStyleProps = {
   isCollapse: boolean;
