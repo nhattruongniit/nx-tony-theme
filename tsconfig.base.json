@@ -22,8 +22,11 @@
       "@tony-theme/chau-core/configs": [
         "libs/themes/chau-core/configs/src/index.ts"
       ],
-      "@tony-theme/components": ["libs/themes/cores/components/src/index.ts"],
-      "@tony-theme/configs": ["libs/themes/cores/configs/src/index.ts"],
+      "@tony-theme/core": ["libs/themes/core/src/index.ts"],
+      "@tony-theme/core/components": [
+        "libs/themes/core/components/src/index.ts"
+      ],
+      "@tony-theme/core/configs": ["libs/themes/core/configs/src/index.ts"],
       "@tony-theme/hooks": ["libs/hooks/src/index.ts"],
       "@tony-theme/piano": ["libs/themes/piano/src/index.ts"]
     }

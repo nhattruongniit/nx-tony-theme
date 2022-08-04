@@ -8,17 +8,18 @@ import {
   Drawer,
   IconButton,
   Box,
+  Avatar,
+  List,
 } from '@mui/material';
-import { List } from '@mui/material';
 
 // hooks
 import { useResponsive } from '@tony-theme/hooks';
 
 // cssStyles
-import { cssStyles } from '@tony-theme/components';
+import { cssStyles } from '@tony-theme/core/components';
 
 // config
-import { NAVBAR } from '@tony-theme/configs';
+import { NAVBAR } from '@tony-theme/core/configs';
 
 // sections
 import NavList from './components/NavBar/NavList';
@@ -105,7 +106,12 @@ export function SideBar({
           justifyContent="space-between"
           sx={{ width: '100%' }}
         >
-          {logo && <img src={logo} alt="Amanotes" width={32} />}
+          {logo ? (
+            <img src={logo} alt="Amanotes" width={32} />
+          ) : (
+            <Avatar variant="square">M</Avatar>
+          )}
+
           {isDesktop && !isCollapse && (
             <IconButton
               color="primary"

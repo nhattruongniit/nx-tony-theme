@@ -1,7 +1,7 @@
 import { styled, AppBar } from '@mui/material';
 
 // css styles
-import { cssStyles } from '@tony-theme/components';
+import { cssStyles } from '@tony-theme/core/components';
 
 // config
 import {
@@ -9,7 +9,7 @@ import {
   NAVBAR,
   APPBAR_MOBILE,
   APPBAR_DESKTOP,
-} from '@tony-theme/configs';
+} from '@tony-theme/core/configs';
 
 type RootStyleProps = {
   isCollapse: boolean;

@@ -1,0 +1,24 @@
+{
+  "name": "@tony-theme/core",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.esm.js",
+      "require": "./index.umd.js"
+    },
+    "./components": {
+      "types": "./components/index.d.ts",
+      "import": "./components/index.esm.js",
+      "require": "./components/index.umd.js"
+    },
+    "./configs": {
+      "types": "./configs/index.d.ts",
+      "import": "./configs/index.esm.js",
+      "require": "./configs/index.umd.js"
+    }
+  }
+}
