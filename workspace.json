@@ -6,6 +6,8 @@
     "pancake-e2e": "apps/pancake-e2e",
     "themes-core-components": "libs/themes/core/components",
     "themes-core-configs": "libs/themes/core/configs",
+    "themes-cores-components": "libs/themes/cores/components",
+    "themes-cores-configs": "libs/themes/cores/configs",
     "themes-piano": "libs/themes/piano"
   }
 }

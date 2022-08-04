@@ -15,10 +15,10 @@ import { List } from '@mui/material';
 import { useResponsive } from '@tony-theme/hooks';
 
 // cssStyles
-import { cssStyles } from '@tony-theme/core/components';
+import { cssStyles } from '@tony-theme/components';
 
 // config
-import { NAVBAR } from '@tony-theme/core/configs';
+import { NAVBAR } from '@tony-theme/configs';
 
 // sections
 import NavList from './components/NavBar/NavList';
