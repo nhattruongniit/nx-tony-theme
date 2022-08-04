@@ -12,16 +12,16 @@ import {
 import { List } from '@mui/material';
 
 // assets
-import { LogoImg } from '@tony-theme/core';
+import { LogoImg } from '@tony-theme/cores/configs';
 
 // hooks
 import { useResponsive } from '@tony-theme/hooks';
 
 // cssStyles
-import { cssStyles } from '@tony-theme/core/components';
+import { cssStyles } from '@tony-theme/cores/components';
 
 // config
-import { NAVBAR } from '@tony-theme/core/config';
+import { NAVBAR } from '@tony-theme/cores/configs';
 
 // sections
 import NavList from './components/NavBar/NavList';

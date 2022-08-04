@@ -4,7 +4,7 @@ import { Box, Toolbar, IconButton } from '@mui/material';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 
 // config
-import { THEMES } from '@tony-theme/core/config';
+import { THEMES } from '@tony-theme/cores/configs';
 
 // hooks
 import { useResponsive } from '@tony-theme/hooks';
@@ -15,7 +15,7 @@ import {
   SearchBar,
   ISearchBarProps,
   IThemeModeProps,
-} from '@tony-theme/core/components';
+} from '@tony-theme/cores/components';
 
 // styles
 import { RootStyle } from './style';

@@ -9,7 +9,7 @@ import { SideBar as DefaultSider } from './components/SideBar';
 import { Header as DefaultHeader } from './components/Header';
 
 // config
-import { HEADER, NAVBAR } from '@tony-theme/core/config';
+import { HEADER, NAVBAR } from '@tony-theme/cores/configs';
 
 // components
 import {
@@ -17,7 +17,7 @@ import {
   ISearchBarProps,
   IAccountPopoverProps,
   IThemeModeProps,
-} from '@tony-theme/core/components';
+} from '@tony-theme/cores/components';
 
 import { NavListProps } from './components/SideBar/type';
 

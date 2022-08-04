@@ -19,7 +19,7 @@ import {
   APPBAR_MOBILE,
   HEADER,
   NAVBAR,
-} from '@tony-theme/core/config';
+} from '@tony-theme/cores/configs';
 
 // styles
 import { cssStyles } from '../cssStyles';
