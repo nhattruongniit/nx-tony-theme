@@ -38,7 +38,7 @@ $ npm run build themes-piano
 
 ```
 "paths": {
-  {name package}: ["libs/themes/minimal/src/index.ts"]
+  {name package}: ["libs/themes/piano/src/index.ts"]
 }
 ```
 
@@ -50,7 +50,7 @@ name package = @tony-theme/minimal
 $ npm login
 ```
 
-6. Go to libs/themes/minimal/project.json
+6. Go to libs/themes/piano/project.json
 
 ```
 "publish": {
@@ -61,5 +61,5 @@ $ npm login
   }
 }
 
-$ nx run themes-minimal:publish
+$ nx run themes-piano:publish
 ```

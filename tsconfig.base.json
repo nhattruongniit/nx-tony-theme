@@ -20,6 +20,7 @@
         "libs/themes/core/components/src/index.ts"
       ],
       "@tony-theme/core/config": ["libs/themes/core/config/src/index.ts"],
+      "@tony-theme/core/testcore": ["libs/themes/core/testcode/src/index.ts"],
       "@tony-theme/hooks": ["libs/hooks/src/index.ts"],
       "@tony-theme/piano": ["libs/themes/piano/src/index.ts"]
     }
