@@ -45,6 +45,17 @@
         "command": "npm publish",
         "cwd": "dist/libs/themes/chau-core"
       }
+    },
+    "package": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "npx nx build themes-chau-core",
+          "npx nx build themes-chau-core-components",
+          "npx nx build themes-chau-core-configs"
+        ],
+        "parallel": false
+      }
     }
   }
 }

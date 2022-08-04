@@ -1,6 +1,6 @@
 {
   "name": "@tony-theme/chau-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publishConfig": {
     "access": "public"
   },
@@ -14,6 +14,11 @@
       "types": "./components/index.d.ts",
       "import": "./components/index.esm.js",
       "require": "./components/index.umd.js"
+    },
+    "./configs": {
+      "types": "./configs/index.d.ts",
+      "import": "./configs/index.esm.js",
+      "require": "./configs/index.umd.js"
     }
   }
 }

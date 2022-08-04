@@ -1,6 +1,6 @@
 {
-  "root": "libs/themes/core/configs",
-  "sourceRoot": "libs/themes/core/configs/src",
+  "root": "libs/themes/chau-core/configs",
+  "sourceRoot": "libs/themes/chau-core/configs/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -8,16 +8,16 @@
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/themes/core/configs",
-        "tsConfig": "libs/themes/core/configs/tsconfig.lib.json",
-        "project": "libs/themes/core/configs/package.json",
-        "entryFile": "libs/themes/core/configs/src/index.ts",
+        "outputPath": "dist/libs/themes/chau-core/configs",
+        "tsConfig": "libs/themes/chau-core/configs/tsconfig.lib.json",
+        "project": "libs/themes/chau-core/configs/package.json",
+        "entryFile": "libs/themes/chau-core/configs/src/index.ts",
         "external": ["react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
         "assets": [
           {
-            "glob": "libs/themes/core/configs/README.md",
+            "glob": "libs/themes/chau-core/configs/README.md",
             "input": ".",
             "output": "."
           }
@@ -28,14 +28,16 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/themes/core/configs/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/themes/chau-core/configs/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/themes/core/configs"],
+      "outputs": ["coverage/libs/themes/chau-core/configs"],
       "options": {
-        "jestConfig": "libs/themes/core/configs/jest.config.js",
+        "jestConfig": "libs/themes/chau-core/configs/jest.config.js",
         "passWithNoTests": true
       }
     }
