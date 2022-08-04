@@ -5,7 +5,7 @@ import Brightness4 from '@mui/icons-material/Brightness4';
 import Brightness7 from '@mui/icons-material/Brightness7';
 
 // configs
-import { THEMES } from '@tony-theme/cores/configs';
+import { THEMES } from '@tony-theme/core/configs';
 
 export interface IThemeModeProps {
   onToggleMode?: VoidFunction;

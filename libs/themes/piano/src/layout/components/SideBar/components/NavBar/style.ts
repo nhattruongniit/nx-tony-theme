@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 
 // config
-import { ICON, NAVBAR } from '@tony-theme/cores/configs';
+import { ICON, NAVBAR } from '@tony-theme/core/configs';
 
 export interface ListItemStyleProps extends ListItemButtonProps {
   active: boolean;
