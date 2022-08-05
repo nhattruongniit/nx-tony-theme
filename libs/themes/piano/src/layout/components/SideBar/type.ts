@@ -36,7 +36,7 @@ export interface ISideBarProps {
   isCollapse: boolean;
   collapseClick: boolean;
   collapseHover: boolean;
-  menuItems?: NavListProps[];
+  menuItems?: unknown[];
   logo?: any | React.ReactNode;
   onCloseSidebar: () => void;
   onToggleCollapse: () => void;

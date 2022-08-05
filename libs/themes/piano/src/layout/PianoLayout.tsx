@@ -11,9 +11,6 @@ import { Header as DefaultHeader } from './components/Header';
 // config
 import { HEADER, NAVBAR } from '../configs';
 
-// components
-import { NavListProps } from './components/SideBar/type';
-
 type MainStyleProps = {
   collapseClick: boolean;
 };
@@ -50,7 +47,7 @@ type IProps = {
   ThemeMode?: React.ReactNode;
   SearchBar?: React.ReactNode;
   menuAccountPopover?: IMenuAccountPopoverProps[];
-  menuItems?: NavListProps[];
+  menuItems?: unknown[];
   logo?: any | React.ReactNode;
   onSearchBar?: (value: string) => void;
 };

@@ -18,7 +18,6 @@ import {
   APPBAR_DESKTOP,
   APPBAR_MOBILE,
   HEADER,
-  NAVBAR,
 } from '@tony-theme/core/configs';
 
 // styles
@@ -43,7 +42,6 @@ export const SearchbarStyle = styled('div')(({ theme }) => ({
   },
   [theme.breakpoints.up('lg')]: {
     height: HEADER.DASHBOARD_DESKTOP_HEIGHT,
-    width: `calc(100% - ${NAVBAR.DASHBOARD_COLLAPSE_WIDTH - 5}px)`,
   },
 }));
 
