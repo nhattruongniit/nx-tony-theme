@@ -14,14 +14,7 @@ import {
 import SearchIcon from '@mui/icons-material/Search';
 
 // config
-import {
-  APPBAR_DESKTOP,
-  APPBAR_MOBILE,
-  HEADER,
-} from '@tony-theme/core/configs';
-
-// styles
-import { cssStyles } from '../configs';
+import { APPBAR_DESKTOP, APPBAR_MOBILE, HEADER, cssStyles } from '../configs';
 
 export const SearchbarStyle = styled('div')(({ theme }) => ({
   ...cssStyles(theme).bgBlur(),
