@@ -110,7 +110,7 @@ $ npx nx generate @nrwl/react:library components --directory=themes/core --build
 $ npx nx generate @nrwl/react:library configs --directory=themes/core --buildable --importPath=@tony-theme/core/configs --no-publishable --no-interactive --dry-run
 ```
 
-6. Go to themes/core/tsconfig.lib,json
+6. Go to themes/core/tsconfig.lib.json
 
 ```
 "exclude": [
@@ -146,7 +146,6 @@ $ npx nx generate @nrwl/react:library configs --directory=themes/core --buildabl
 
 - Build themes-core: npx nx build themes-core
 - Build themes-core-components: npx nx build themes-core-components
-- Build themes-core-configs: npx nx build themes-core-configs
 
 or
 

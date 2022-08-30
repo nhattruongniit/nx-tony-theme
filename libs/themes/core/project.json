@@ -44,8 +44,7 @@
       "options": {
         "commands": [
           "npx nx build themes-core",
-          "npx nx build themes-core-components",
-          "npx nx build themes-core-configs"
+          "npx nx build themes-core-components"
         ],
         "parallel": false
       }
