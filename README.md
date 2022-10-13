@@ -13,14 +13,14 @@ This project was generated using [Nx](https://nx.dev).
 1. Create an lib publish
 
 ```bash
-$ npx nx generate @nrwl/react:library piano --directory=themes --importPath=@tony-mui/minimal --publishable
+$ npx nx generate @nrwl/react:library piano --directory=themes --importPath=@tony-theme/piano --publishable
 ```
 
 2. Go to libs/themes/piano/package.json
 
 ```
 {
-  "name": "@tony-theme/minimal",
+  "name": "@tony-theme/piano",
   "version": "0.0.1",
   "publishConfig": {
     "access": "public"

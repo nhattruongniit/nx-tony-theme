@@ -1,0 +1,43 @@
+{
+  "root": "libs/themes/guitar",
+  "sourceRoot": "libs/themes/guitar/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/themes/guitar",
+        "tsConfig": "libs/themes/guitar/tsconfig.lib.json",
+        "project": "libs/themes/guitar/package.json",
+        "entryFile": "libs/themes/guitar/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "libs/themes/guitar/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/themes/guitar/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/themes/guitar"],
+      "options": {
+        "jestConfig": "libs/themes/guitar/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

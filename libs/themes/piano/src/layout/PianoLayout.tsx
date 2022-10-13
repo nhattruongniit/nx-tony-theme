@@ -15,11 +15,6 @@ type MainStyleProps = {
   collapseClick: boolean;
 };
 
-type IMenuAccountPopoverProps = {
-  label: string;
-  action: () => void;
-};
-
 const MainStyle = styled('main', {
   shouldForwardProp: (prop) => prop !== 'collapseClick',
 })<MainStyleProps>(({ collapseClick, theme }) => ({
@@ -41,14 +36,22 @@ const MainStyle = styled('main', {
   },
 }));
 
+type IMenu = {
+  key: string;
+  label: string;
+  name: string;
+  children: IMenu[];
+  route: string;
+  icon?: React.ReactNode;
+};
+
 type IProps = {
   children: React.ReactNode;
   AccountPopover?: React.ReactNode;
   ThemeMode?: React.ReactNode;
   SearchBar?: React.ReactNode;
-  menuAccountPopover?: IMenuAccountPopoverProps[];
-  menuItems?: unknown[];
-  logo?: any | React.ReactNode;
+  menuItems?: IMenu[];
+  logo?: unknown | React.ReactNode;
   onSearchBar?: (value: string) => void;
 };
 
@@ -60,6 +63,7 @@ export const PianoLayout: React.FC<IProps> = ({
   AccountPopover,
   ThemeMode,
   SearchBar,
+  // react children
   children,
 }) => {
   const [open, setOpen] = React.useState(false);

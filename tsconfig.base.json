@@ -27,6 +27,7 @@
       "@tony-theme/core/components": [
         "libs/themes/core/components/src/index.ts"
       ],
+      "@tony-theme/guitar": ["libs/themes/guitar/src/index.ts"],
       "@tony-theme/hooks": ["libs/hooks/src/index.ts"],
       "@tony-theme/piano": ["libs/themes/piano/src/index.ts"]
     }

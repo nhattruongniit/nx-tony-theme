@@ -11,7 +11,7 @@ function getActive(path: string, pathname: string) {
 }
 
 function isExternalLink(path: string) {
-  return path.includes('http');
+  return path && path.includes('http');
 }
 
 type NavListRootProps = {
