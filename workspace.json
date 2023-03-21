@@ -9,7 +9,6 @@
     "themes-chau-core-configs": "libs/themes/chau-core/configs",
     "themes-core": "libs/themes/core",
     "themes-core-components": "libs/themes/core/components",
-    "themes-guitar": "libs/themes/guitar",
     "themes-piano": "libs/themes/piano"
   }
 }
